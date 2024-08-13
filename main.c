@@ -5,20 +5,19 @@
 #include <stdio.h>
 #include "main.h"
 
-void binary()
+void binary_system(int num)
 {
     int matrix[8] = {128,64,32,16,8,4,2,1};
     int i = 0;
-    int user;
 
     int leng = sizeof(matrix)/ sizeof(matrix[0]);
     puts("Enter number before 255");
-    scanf("%d",&user);
+    scanf("%d",&num);
     while(i<leng)
     {
-        if(user>=matrix[i]){
+        if(num>=matrix[i]){
             printf("1");
-            user -=matrix[i];
+            num -=matrix[i];
         } else {
             printf("0");
         }
@@ -29,40 +28,47 @@ void binary()
 
 }
 
+void octal_system(int num){
+    puts("enter number");
+    scanf("%d",&num);
 
-void octal(){
-    puts("Hello octal");
+    printf("%o\n", num); 
 
 }
-void decimal(){
+void decimal_system(int num){
     puts("Hello decimal");
 
 }
-void hexadecimal(){
-    puts("Hello hexadecimal");
+void hexadecimal_system(int num){
+
+   puts("dasdasdasd");
 
 }
 
 int main(void)
 {
-    int user;
+    int choice;
+    int num;
+
     puts("Which system should the number be converted to?: 1: decimal, 2: hexadecimal, 3: octal, 4: binary");
+    scanf("%d",&choice);
+    
+    puts("which number you want change?");
+    scanf("%d",&num);
 
-    scanf("%d\n",&user);
-
-    switch (user)
+    switch (num)
     {
         case 1:
-            decimal();
+            decimal_system(num);
             break;
         case 2:
-            hexadecimal();
+            hexadecimal_system(num);
             break;
         case 3: 
-            octal();
+            octal_system(num);
             break;
         case 4:
-            binary();
+            binary_system(num);
             break;
         default:
             break;
