@@ -1,6 +1,6 @@
 /*
-   Программа для конвертации чисел: Напиши программу, которая будет конвертировать числа между разными системами счисления 
-   (двоичная, восьмеричная, десятичная, шестнадцатеричная).
+Number conversion program: Write a program that will convert numbers between different number systems 
+   (binary, octal, decimal, hexadecimal).
    */
 #include <stdio.h>
 #include "main.h"
@@ -11,8 +11,7 @@ void binary_system(int num)
     int i = 0;
 
     int leng = sizeof(matrix)/ sizeof(matrix[0]);
-    puts("Enter number before 255");
-    scanf("%d",&num);
+    
     while(i<leng)
     {
         if(num>=matrix[i]){
@@ -50,13 +49,15 @@ int main(void)
     int choice;
     int num;
 
-    puts("Which system should the number be converted to?: 1: decimal, 2: hexadecimal, 3: octal, 4: binary");
-    scanf("%d",&choice);
     
     puts("which number you want change?");
     scanf("%d",&num);
 
-    switch (num)
+
+    puts("Which system should the number be converted to?: 1: decimal, 2: hexadecimal, 3: octal, 4: binary");
+    scanf("%d",&choice);
+
+    switch (choice)
     {
         case 1:
             decimal_system(num);
